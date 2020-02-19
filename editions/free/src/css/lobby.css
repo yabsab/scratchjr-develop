@@ -93,7 +93,7 @@ div.frame {
     width: ${css_vh(16)};
 }
 
-#topbar ul.topbar-nav .help .help-icon {
+/* #topbar ul.topbar-nav .help .help-icon {
     display: block;
     width: ${css_vh(12.63)};
     height: ${css_vh(10.03)};
@@ -101,7 +101,7 @@ div.frame {
     background-size: 101%;
     padding: 0;
     margin: auto auto;
-}
+} */
 
 #topbar ul.topbar-nav .home.on{background: #F9A737; height: ${css_vh(10.81)};}
 #topbar ul.topbar-nav .home.off{background: none; height: auto;}
@@ -132,7 +132,7 @@ div.frame {
     border-left: 1px solid white;
 }
 
-#topbar ul.reference .book .book-icon {
+/* #topbar ul.reference .book .book-icon {
     display: block;
     width: ${css_vh(12.63)};
     height: ${css_vh(10.03)};
@@ -140,7 +140,7 @@ div.frame {
     background-size: 101%;
     padding: 0;
     margin: auto auto;
-}
+} */
 
 #topbar ul.reference .book.off>span {background: url('../assets/lobby/bookOff.svg'); background-size: 101%;}
 #topbar ul.reference .book.on>span {background: url('../assets/lobby/bookOn.svg'); background-size: 101%; margin: 0px ${css_vh(0.8)};}

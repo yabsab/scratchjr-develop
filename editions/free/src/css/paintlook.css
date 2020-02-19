@@ -18,13 +18,13 @@
 
 /*name*/
 
-.spriteform {
+/* .spriteform {
     margin: ${css_vh(0.65)} auto;
     position: relative;
     top:  ${css_vh(0.65)};
     width: ${css_vh(31.25)};
     height: ${css_vh(6.51)};
-}
+} */
 
 .spriteform input{
     text-align: center;

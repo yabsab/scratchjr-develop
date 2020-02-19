@@ -1,6 +1,6 @@
 /* sprite library panel */
-
-.flipme {
+/* 홈버튼 기능 삭제 예정 */
+/* .flipme {
     position: absolute;
     margin: 0px;
     padding: 0px;
@@ -8,17 +8,18 @@
     left: ${css_vh(1.69)};
     background:  url('../assets/ui/fliplogo.svg');
     background-size: 100.5%; /* webview pixelates the image unless we do this */
-    width: ${css_vh(29.95)};
-    height: ${css_vh(8.20)};
-}
+    /* width: ${css_vh(29.95)};
+    height: ${css_vh(8.20)}; 
+} */
 
-.flipme:active {
+/* .flipme:active {
     background:  url('../assets/ui/fliplogoPressed.svg');
     background-size: 100.5%;  /* webview pixelates the image unless we do this */
-}
+/*
+} */
 
 .scrollbar {
-    position: absolute;
+    /* position: absolute;
     display: inline-block;
     margin: 0px;
     padding: 0px;
@@ -26,16 +27,16 @@
     left: ${css_vh(32.29)};
     width: ${css_vh(1.04)};
     height: ${css_vh(40.63)};
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.5); */
 }
 
 .scrollbar .sbthumb {
-    position: absolute;
+    /* position: absolute;
     margin: 0px;
     padding: 0px;
     width: ${css_vh(1.04)};
     height: 0px;
-    background: #C9C9C9;
+    background: #C9C9C9; */
 }
 
 .scrollbar.off { display: none;}
@@ -43,38 +44,38 @@
 .scrollbar.on {display: inline-block;}
 
 #library {
-    position: absolute;
+    /* position: absolute;
     display: inline-block;
     margin: 0px;
     padding: 0px;
     top: ${css_vh(9.38)};
     width: ${css_vh(33.85)};
-    overflow-x: hidden;
+    overflow-x: hidden; */
 }
 
 #library .spritethumbs {
-    position: relative;
+    /* position: relative;
     margin: 0px;
     padding: 0px;
     display: block;
     overflow-y: scroll;
     overflow-x: hidden;
     width: ${css_vh(33.85)};
-    max-height: ${css_vh(40.63)};
+    max-height: ${css_vh(40.63)}; */
 }
 
-.spritethumbs::-webkit-scrollbar {
+/* .spritethumbs::-webkit-scrollbar {
     width: 0 !important;
-}
+} */
 
-#library .spritethumbs .spritecc{
+/* #library .spritethumbs .spritecc{
     position: relative;
     margin: 0px ${css_vh(2.34)} 0px;
     padding: 0px;
     width:  ${css_vh(29.95)};
-}
+} */
 
-#library .addsprite {
+/* #library .addsprite {
     position: relative;
     display: inline-block;
     background:  url('../assets/ui/newsprite2.png') no-repeat left top;
@@ -82,11 +83,11 @@
     width:  ${css_vh(23.18)};
     height: ${css_vh(10.29)};
     margin: 0px ${css_vh(2.34)} 0px;
-}
+} */
 
 
 /* sprites thumbnails */
-.spritethumb {
+/* .spritethumb {
     background: none;
     position: relative;
     display: inline-block;
@@ -102,9 +103,9 @@
     position: absolute;
     margin: ${css_vh(0.65)} ${css_vh(0.65)} 0px;
     padding: 0px;
-}
+} */
 
-.spritethumb.off {
+/* .spritethumb.off {
     background: url('../assets/ui/viewOff.png') no-repeat left top;
     background-size: ${css_vh(23.18)};
 }
@@ -129,16 +130,16 @@
 .spritethumb.noneditable {
     background: url('../assets/ui/viewOffTarget.png') no-repeat left top;
     background-size: 100% 100%;
-}
+} */
 
 .spritethumb.on .deletespritethumb {
     position: absolute;
     margin: 0px 0px 0px;
     left: 0px;
-    width: ${css_vh(5.86)};
-    height: ${css_vh(5.73)};
+    width: ${css_vh(0)};
+    height: ${css_vh(0)};
     background: url('../assets/ui/closeit.svg');
-    background-size: 100.5%; /* webview pixelates the image unless we do this */
+    background-size: 100.5%;  webview pixelates the image unless we do this */
     z-index: 5;
     -webkit-user-select: none;
 }
@@ -155,7 +156,7 @@
     -webkit-user-select: none;
 }
 
-.spritethumb .icon{
+/* .spritethumb .icon{
     position: absolute;
     top: ${css_vh(0.65)};
     left: ${css_vh(1.04)};
@@ -164,9 +165,9 @@
     margin: ${css_vh(0.00)};
     padding: ${css_vh(0.00)};
     overflow: hidden;
-}
+} */
 
-.spritethumb .sname{
+/* .spritethumb .sname{
     position: absolute;
     text-align: center;
     top: ${css_vh(3.52)};
@@ -183,9 +184,9 @@
     width: ${css_vh(11.97)};
     cursor: default;
     color: #999999;
-}
+} */
 
-.spritethumb.off .sname{
+/* .spritethumb.off .sname{
     color: #999999;
     top: ${css_vh(3.52)};
     left: ${css_vh(9.89)};
@@ -203,9 +204,9 @@
     top: ${css_vh(3.91)};
     left: ${css_vh(9.24)};
     width: ${css_vh(11.97)};
-}
+} */
 
-.spritethumb .brush {
+/* .spritethumb .brush {
     position: absolute;
     background:  url('../assets/paint/paintbrush.svg');
     background-size: ${css_vh(7.03)} ${css_vh(7.03)};
@@ -215,8 +216,8 @@
     left: ${css_vh(21.75)};
     margin: 0px;
     padding: 0px;
-}
+} */
 
-.spritethumb .brush:active { background:  url('../assets/paint/paintbrushPressed.svg'); background-size: 100%; }
+/* .spritethumb .brush:active { background:  url('../assets/paint/paintbrushPressed.svg'); background-size: 100%; }
 .spritethumb.off .brush{ display: none;}
-.spritethumb.noneditable .brush{ display: none;}
+.spritethumb.noneditable .brush{ display: none;} 

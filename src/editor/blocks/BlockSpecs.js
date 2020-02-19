@@ -72,7 +72,7 @@ export default class BlockSpecs {
         BlockSpecs.balloon = str;
     }
 
-
+        //코딩 블록 외부 모양 로드
     static loadGraphics () {
         BlockSpecs.mic = BlockSpecs.getImageFrom('assets/ui/recordslot', 'svg');
         BlockSpecs.yellowStart = BlockSpecs.getImageFrom('assets/blocks/start', 'svg');

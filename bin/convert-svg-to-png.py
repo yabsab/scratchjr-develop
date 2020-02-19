@@ -52,6 +52,9 @@ def main(argv):
     print 'Input svg directory is ' + svgDirectory
     print 'Output png directory is ' + pngDirectory
 
+#    MAX_WIDTH = 180
+#    MAX_HEIGHT = 140
+    
     MAX_WIDTH = 180
     MAX_HEIGHT = 140
     

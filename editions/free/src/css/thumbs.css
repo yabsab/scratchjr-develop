@@ -1,4 +1,4 @@
-.projectthumb {
+/* .projectthumb {
     display: inline-block;
     position: relative;
     margin: 0px;
@@ -171,6 +171,8 @@
     background-color: #1dafed;
     border: 3px solid #fff;
     height: ${css_vh(1.57)};
+
+    
     width: ${css_vw(18.75)};
     position: relative;
     top: ${css_vh(-27.34)};
@@ -201,4 +203,4 @@
     padding: 0px;
     margin: 0px;
     width: 100%;
-}
+} */

@@ -1,3 +1,5 @@
+// 무슨기능인지 x s
+
 import ScratchJr from '../ScratchJr';
 import ScratchAudio from '../../utils/ScratchAudio';
 import Grid from '../ui/Grid';

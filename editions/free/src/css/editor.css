@@ -10,7 +10,8 @@ div.frame {
 }
 
 /*project info*/
-*.info {
+/* 프로젝트 저장 화면으로 이동(이름 설정_ */
+/* *.info {
     position: absolute;
     top: 0;
     right: ${css_vh(0)};
@@ -20,10 +21,10 @@ div.frame {
     background-size: 100%;
     background-repeat: no-repeat;
     z-index: 10;
-}
+} */
 
 /* Container */
-*.topsection {
+/* *.topsection {
     padding: ${css_vh(0)};
     margin: ${css_vh(0)} ${css_vh(0)} ${css_vh(0)};
     width: 100%;
@@ -57,20 +58,20 @@ div.frame {
     display: inline-block;
     height: ${css_vh(61.20)};
     width: ${css_vh(21.09)};
-}
+} */
 
 /* Pages Thumbnails */
 
-.pages {
+/* .pages {
     top: ${css_vh(0)};
     position: absolute;
     display: inline-block;
     margin: ${css_vh(0)} ${css_vh(1.29)} ${css_vh(0)};
     width:  ${css_vh(21.09)};
     height: 100%;
-}
+} */
 
-.pagescc{
+/* .pagescc{
     position: absolute;
     top: ${css_vh(2.60)};
     width:  ${css_vh(21.09)};
@@ -84,9 +85,9 @@ div.frame {
     padding: ${css_vh(0)};
     width: ${145 * scaleMultiplier}px;
     height: ${109 * scaleMultiplier}px;
-}
+} */
 
-.pagethumb.on {
+/* .pagethumb.on {
     background: url('../assets/ui/pageOn.png');
     background-size: 100% 100%;
 }
@@ -94,9 +95,9 @@ div.frame {
 .pagethumb.off {
     background: url('../assets/ui/pageOff.png');
     background-size: 100% 100%;
-}
+} */
 
-.pagethumb.caret {
+/* .pagethumb.caret {
     background: url('../assets/ui/pageOff.png');
     opacity: 0.25;
     background-size: 100% 100%;
@@ -105,17 +106,17 @@ div.frame {
 .pagethumb.drop {
     background: url('../assets/ui/pageTarget.png');
     background-size: 100% 100%;
-}
+} */
 
-.pagethumb .pc-container {
+/* .pagethumb .pc-container {
     margin: ${css_vh(0.52)} ${css_vh(0.65)} ${css_vh(0)};
-}
+} */
 
-.pagethumb .pc {
+/* .pagethumb .pc {
     position: relative;
-}
+} */
 
-.pagethumb .empty {
+/* .pagethumb .empty {
     margin: ${css_vh(0)} ${css_vh(0)} ${css_vh(0.13)};
     width: ${145 * scaleMultiplier}px;
     height: ${109 * scaleMultiplier}px;
@@ -123,8 +124,8 @@ div.frame {
 
 .pagethumb .empty img {
     height: ${109 * scaleMultiplier}px;
-}
-
+} */
+/* 
 .pagethumb .pagenum {
     position: relative;
     margin: ${css_vh(-14.64)} ${css_vh(16.06)} ${css_vh(0)};
@@ -140,15 +141,15 @@ div.frame {
     text-shadow:  0 ${css_vh(0.13)} #000;
     background: url('../assets/ui/numOff.svg') no-repeat left top;
     background-size: 65%;
-}
+} */
 
-.pagethumb.on .pagenum {
+/* .pagethumb.on .pagenum {
     text-shadow:  0 ${-scaleMultiplier}px #AF7228;
     background: url('../assets/ui/numOn.svg') no-repeat left top;
     background-size: 65%;
-}
+} */
 
-.pagethumb.off .pagenum {
+/* .pagethumb.off .pagenum {
     text-shadow:  0 ${scaleMultiplier}px #000;
     background: url('../assets/ui/numOff.svg') no-repeat left top;
     background-size: 65%;
@@ -158,13 +159,13 @@ div.frame {
     text-shadow:  0 -${scaleMultiplier}px #AF7228;
     background: url('../assets/ui/numOn.svg') no-repeat left top;
     background-size: 65%;
-}
+} */
 
 .deletethumb {
     position: relative;
-    margin: ${css_vh(-3.9)} ${css_vh(0)} ${css_vh(0)};
-    width: ${css_vh(5.86)};
-    height: ${css_vh(5.73)};
+    margin: ${css_vh(0)} ${css_vh(0)} ${css_vh(0)};
+    width: ${css_vh(0)};
+    height: ${css_vh(0)};
     background: url('../assets/ui/closeit.svg');
     background-size: 100.5%; /* webview pixelates the image unless we do this */
     visibility: hidden;
@@ -186,7 +187,7 @@ div.frame {
 }
 
 /*Editor UI*/
-
+/* 되돌리기 버튼 */
 #blockspalette {
     position: relative;
     left: 0;
@@ -222,7 +223,7 @@ div.frame {
 }
 
 /* category selector */
-
+/* 블록 뒷 배경 조절  */
 #blockspalette .categoryselector{
     display: inline-block;
     word-spacing: -1;
@@ -250,6 +251,7 @@ div.frame {
     background-size: 100%;
 }
 
+/* paltte 위치 설정   */
 #blockspalette .palette{
     display: inline-block;
     position: relative;
@@ -456,7 +458,7 @@ z-index: 5;
 .watermark > canvas{
     position: absolute;
 }
-
+/* 코드가 좌, 우로 확장 될 경우 editor icon */
 .scripts .leftarrow {
     float: left;
     padding: ${css_vh(0.00)};
@@ -491,6 +493,8 @@ z-index: 5;
     background: url('../assets/ui/arrowright.svg');
     background-size: 100%;
 }
+/* 코드가 좌, 우로 확장 될 경우 editor icon */
+
 
 .scripts .toparrow {
     position: relative;
@@ -525,6 +529,11 @@ z-index: 5;
 }
 
 .halign.down { background: url('../assets/ui/arrowdown.svg'); background-size: 100%; }
+
+
+/* 코드가 좌, 우로 확장 될 경우 editor icon */
+
+
 
 /* parental gate */
 .parentalgate {
@@ -682,6 +691,7 @@ img.infoboxShareLoading {
 
 .infobox.fade {
     /*  -webkit-transition: top .2s linear, left .2s ease-out;*/
+    
     top: ${css_vh(-100)};
     left: ${css_vh(133.33)};
 }
@@ -693,6 +703,8 @@ img.infoboxShareLoading {
 }
 
 
+  /*	-webkit-user-select: none !important;*/
+  
 form.projectname {
     padding: ${css_vh(0)};
     width: ${css_vh(46.88)};
@@ -706,7 +718,7 @@ form.projectname {
     -webkit-box-shadow: 0px ${scaleMultiplier}px 0px #ffffff;
     margin-left: auto;
     margin-right: auto;
-    /*	-webkit-user-select: none !important;*/
+  
 }
 
 *.pnamefield{
@@ -1020,7 +1032,7 @@ Blocks text fields and input fields
 
 *.picokeyboard.on {display: block;}
 
-*.picokeyboard.off {    display: none;}
+*.picokeyboard.off {display: none;}
 
 *.insidekeyboard {
     margin: ${css_vh(0.65)} ${css_vh(0.65)} ${css_vh(0.00)};

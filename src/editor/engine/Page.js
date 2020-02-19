@@ -530,17 +530,17 @@ export default class Page {
     }
 
     modifySpriteName (cid, sid) {
-        var sprite = gn(unescape(sid)).owner;
-        if (!sprite) {
-            sprite = ScratchJr.getSprite();
-        }
-        sprite.name = cid;
-        sprite.thumbnail.childNodes[1].textContent = cid;
-        Undo.record({
-            action: 'modify',
-            where: this.id,
-            who: sprite.id
-        });
-        ScratchJr.storyStart('Page.prototype.modifySpriteName');
+        // var sprite = gn(unescape(sid)).owner;
+        // if (!sprite) {
+        //     sprite = ScratchJr.getSprite();
+        // }
+        // sprite.name = cid;
+        // sprite.thumbnail.childNodes[1].textContent = cid;
+        // Undo.record({
+        //     action: 'modify',
+        //     where: this.id,
+        //     who: sprite.id
+        // });
+        // ScratchJr.storyStart('Page.prototype.modifySpriteName');
     }
 }

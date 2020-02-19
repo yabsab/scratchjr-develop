@@ -27,7 +27,7 @@ div.frame {
     background: url('../assets/start/catlogo.png');
 }
 
-*.credits {
+/* *.credits {
     position: absolute;
     bottom: 0px;
     width: 100%;
@@ -37,9 +37,9 @@ div.frame {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     z-index: 20;
-}
+} */
 
-*.creditsText {
+/* *.creditsText {
     position: absolute;
     bottom: 0px;
     width: 100%;
@@ -49,7 +49,7 @@ div.frame {
     background-repeat: no-repeat;
     background-size: auto 45%;
     z-index: 21;
-}
+} */
 
 .credits.hide, .creditsText.hide {display: none;}
 .credits.show, .creditsText.show {display: block;}
@@ -168,7 +168,7 @@ div.frame {
     width: 60px;
     height: 60px;
 }
-
+/* 시작화면 */
 .startcode {
     position: absolute;
     top: 65%;

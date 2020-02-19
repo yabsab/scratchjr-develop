@@ -295,6 +295,7 @@ export default class BlockArg {
             ctx.drawImage(img, 0, 0);
         }
         return field;
+        
     }
 
     pressDropDown (e, fcn) {
