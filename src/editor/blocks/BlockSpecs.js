@@ -138,6 +138,7 @@ export default class BlockSpecs {
         }
     }
 
+    //블록 수정 
     static setupCategories () {
         return new Array(
             [

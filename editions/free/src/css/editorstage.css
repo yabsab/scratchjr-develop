@@ -17,9 +17,9 @@
     top: 0px;
     background:  url('../assets/ui/fullOn2.svg');
     background-size: 100%;
-} */
+}
 
-/* .gridToggle {
+.gridToggle {
     position: absolute;
     margin: 0px;
     padding: 0px;
@@ -27,47 +27,71 @@
     left: ${css_vh(13.54)};
     width: ${css_vh(8.33)};
     height: ${css_vh(8.33)};
-} */
+}
 
-/* .gridToggle.off {background:  url('../assets/ui/gridOn.svg'); background-size: 100%; }
-.gridToggle.on {background:  url('../assets/ui/gridOff.svg'); background-size: 100%; } */
-
+ .gridToggle.off {background:  url('../assets/ui/gridOn.svg'); background-size: 100%; }
+.gridToggle.on {background:  url('../assets/ui/gridOff.svg'); background-size: 100%; }d
+ */
 
 
 /* Text 입력 버튼  */
-/* .addText {
+/* webview pixelates the image unless we do this */
+/* .flipme {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: ${css_vh(0.65)};
+    left: ${css_vh(50)};
+    background:  url('../assets/ui/fliplogo.svg');
+    background:rgba(255,0,0,0.5);
+    background-size: 100.5%; 
+    width: ${css_vh(8.33)};
+    height: ${css_vh(8.33)};
+}  */
+
+ /* webview pixelates the image unless we do this */
+ /* .flipme:active {
+    background:  url('../assets/ui/fliplogoPressed.svg');
+    background-size: 100.5%; 
+
+} */
+
+ /* background:  url('../assets/ui/addText.svg'); */
+
+.addText {
     position: absolute;
     margin: 0px;
     padding: 0px;
     top: ${css_vh(0.65)};
     left: ${css_vh(37.89)};
-
     width: ${css_vh(8.33)};
-    height: ${css_vh(8.33)};
-    background:  url('../assets/ui/addText.svg');
-    background-size: 100.5%; /* webview pixelates the image unless we do this */
-/*
+    height: ${css_vh(8.33)}; 
+    background: #337b36;
+    background-size: 100.5%; 
+
 }
+
+/* webview pixelates the image unless we do this*/
 .addText:active {
     background:  url('../assets/ui/addTextPressed.svg');
-    background-size: 100.5%; /* webview pixelates the image unless we do this 
+    background-size: 100.5%; 
 
 } 
 
-/* .changeBkg {
+ /* background:  url('../assets/ui/scene1.svg'); */
+ .changeBkg {
     position: absolute;
     margin: 0px;
     padding: 0px;
     top: ${css_vh(0.65)};
     left: ${css_vh(29.30)};
-
     width: ${css_vh(8.33)};
-    height: ${css_vh(8.33)};
-    background:  url('../assets/ui/scene1.svg');
+    height: ${css_vh(8.33)};   
+    background: #337b36;
     background-size: 100%;
-} */
+} 
 
-/* .changeBkg:active {background:  url('../assets/ui/scenePressed1.svg'); background-size: 100%; } */
+ .changeBkg:active {background:  url('../assets/ui/scenePressed1.svg'); background-size: 100%; } 
 
 
 .resetall {
@@ -78,6 +102,7 @@
     left: ${css_vh(53.13)};
     background:  url('../assets/ui/resetAll.svg');
     background-size: 100.5%; /* webview pixelates the image unless we do this */
+    background: #337b36;
     width: ${css_vh(8.33)};
     height: ${css_vh(8.33)};
 }
@@ -87,7 +112,7 @@
     background-size: 100.5%; /* webview pixelates the image unless we do this */
 }
 
-.resetall.presentationmode {
+/* .resetall.presentationmode {
     position: absolute;
     left: ${css_vh(126.17)};
     top: ${css_vh(15.63)};
@@ -96,7 +121,7 @@
 .resetall.nopresent {
     top: ${css_vh(0.65)};
     left: ${css_vh(53.13)};
-}
+} */
 
 .go {
     position: absolute;
@@ -135,7 +160,7 @@
 
 /* stage text edit */
 
-/* .pagetext {
+ .pagetext {
     background: #4682B5;
     border: 1px solid #355E7C;
     position: absolute;
@@ -158,9 +183,9 @@
     padding: 0px;
     width: ${css_vh(62.50)};
     height: auto;
-} */
+}
 
-/* *.edittext{
+ *.edittext{
     position: absolute;
     margin: 0px;
     padding: 0px;
@@ -173,9 +198,9 @@
     background: white;
     width: ${css_vh(62.50)};
     outline: 0px;
-} */
+} 
 
-/* .pagetextactions {
+ .pagetextactions {
     position: relative;
     left: 0px;
     margin: ${css_vh(0.65)} 0px ${css_vh(0.65)};
@@ -276,67 +301,73 @@
 
 .textuisize.t1.off, .textuisize.t2.off, .textuisize.t3.off, .textuisize.t4.off,
 .textuisize.t5.off, .textuisize.t6.off, .textuisize.t7.off { color: #ffffff;}
- */
+ 
 
 /* stage */
 
-/* #stageframe {
+ #stageframe {
     position: relative;
-    margin-left: auto;
+    /* margin-left: auto;
     margin-right: auto;
     width: ${css_vh(70.57)};
-    height: ${css_vh(61.20)};
-} */
+    height: ${css_vh(61.20)}; */
 
-/* #stageframe .stage {
+    margin-left: auto;
+    margin-right: auto;
+    width: ${css_vh(0)};
+    height: ${css_vh(0)};
+} 
+
+
+ /*-webkit-box-shadow: 1px 1px 3px #D0D1D2;*/
+
+ /* 코딩 디스플레이 화면  */
+ /* #stageframe .stage {
     background: #ffffff;
     position: absolute;
     margin: 0px;
     margin-bottom: ${5 * scaleMultiplier}px;
     overflow: hidden;
-    width: 480px;
+    width: 199px;
     height: 360px;
     border: 1px solid #B3B3B3;
 
-    /*-webkit-box-shadow: 1px 1px 3px #D0D1D2;*/
-    /*
-} */
+   
+    
+}  */
 
-/* *.stage.fullscreen {
+ /* -webkit-box-shadow: 1px 1px 1px #4d4e4e; */
+ /* *.stage.fullscreen {
     position: absolute;
     border: 0px solid #4d4e4e;
     width: 480px;
     height: 360px;
     overflow: hidden;
     background: none;
-    /* -webkit-box-shadow: 1px 1px 1px #4d4e4e; */
-    /* 
-} */
-
-
-
-/* *.stage.normal {
+   
+    
+}  */
+ /* *.stage.normal {
     position: absolute;
     width: 480px;
     height: 360px;
     border: 1px solid #D0D1D2;
     overflow: hidden;
     -webkit-box-shadow: ${1 * scaleMultiplier}px ${1 * scaleMultiplier}px ${3 * scaleMultiplier}px #D0D1D2;
-} */
-
-/* *.stagepage {
+} 
+ *.stagepage {
     position: absolute;
     width: 480px;
     height: 360px;
     -webkit-transform-style: preserve-3d;
     -webkit-text-size-adjust: auto;
-}
+} */
 
-#stageframe .stage.editable { left: 92px;}
+/* #stageframe .stage.editable { left: 92px;}
 
-#stageframe .stage.noteditable { left: 26px;} */
+#stageframe .stage.noteditable { left: 26px;} 
 
-/* #stageframe .grid {
+ #stageframe .grid {
     position: absolute;
     left: 93px;
     top: 2px;
@@ -354,7 +385,7 @@
     height: 24px;
     z-index: 10;
     background: lime;
-}
+} 
 
 #stageframe .colnum{
     position: absolute;
@@ -377,9 +408,9 @@
     background: url('../assets/ui/nextpage.svg');
     background-size: 100%;
     -webkit-user-select: none;
-} */
+} 
 
-/* .nextpage:active {background: url('../assets/ui/nextpagePressed.svg'); background-size: 100%; }
+ .nextpage:active {background: url('../assets/ui/nextpagePressed.svg'); background-size: 100%; }
 
 .nextpage.on {display: block;}
 
@@ -396,19 +427,19 @@
     background: url('../assets/ui/prevpage.svg');
     background-size: 100%;
     -webkit-user-select: none;
-} */
+} 
 
-/* .prevpage:active {background: url('../assets/ui/prevpagePressed.svg'); background-size: 100%; }
+.prevpage:active {background: url('../assets/ui/prevpagePressed.svg'); background-size: 100%; }
 
 .prevpage.on {display: block;}
 
-.prevpage.off {display: none;} */
-
+.prevpage.off {display: none;} 
+*/
 
 /* Grid */
 
-/* 
-p.stylelabel {
+
+/* p.stylelabel {
     position: relative; text-align: center;
     margin-top: 5px;
     color: #C9C9C9;
@@ -437,4 +468,4 @@ p.stylelabel {
     top: 0px;
     margin-bottom: 0px;
     cursor: default;
-} */
+}  */

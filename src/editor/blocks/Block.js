@@ -6,7 +6,7 @@ import {setProps, setCanvasSize, scaleMultiplier} from '../../utils/lib';
 export default class Block {
     constructor (spec, isPalette, scale) {
         this.div = document.createElement('div');
-
+       
         // Top-level block parent shouldn't accept pointer events
         setProps(this.div.style, {
             pointerEvents: 'none'
@@ -166,6 +166,7 @@ export default class Block {
     }
 
     drawBlock () {
+       
         var cnv = this.blockshape;
         var ctx = this.blockshape.getContext('2d');
         ctx.clearRect(0, 0, cnv.width, cnv.height);
@@ -468,6 +469,7 @@ export default class Block {
     /////////////////////////////////////////
 
     moveBlock (dx, dy) {
+       
         this.div.top = dy;
         this.div.left = dx;
         this.div.style.webkitTransform = 'translate3d(' + this.div.left + 'px,' + this.div.top + 'px, 0)';

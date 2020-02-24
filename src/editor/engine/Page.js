@@ -26,10 +26,16 @@ export default class Page {
         ScratchJr.stage.currentPage = this;
         this.num = data ? data.num : ScratchJr.stage.pages.length + 1;
         this.sprites = JSON.stringify([]);
-        this.bkg = newDiv(this.div, 0, 0, 480, 360, {
+        // this.bkg = newDiv(this.div, 0, 0, 480, 360, {
+        //     position: 'absolute',
+        //     background: ScratchJr.stagecolor
+        // });
+
+        this.bkg = newDiv(this.div, 0, 0, 0, 0, {
             position: 'absolute',
             background: ScratchJr.stagecolor
         });
+
         this.bkg.type = 'background';
         ScratchJr.stage.pages.push(this);
         if (!data) {
@@ -530,17 +536,17 @@ export default class Page {
     }
 
     modifySpriteName (cid, sid) {
-        // var sprite = gn(unescape(sid)).owner;
-        // if (!sprite) {
-        //     sprite = ScratchJr.getSprite();
-        // }
-        // sprite.name = cid;
-        // sprite.thumbnail.childNodes[1].textContent = cid;
-        // Undo.record({
-        //     action: 'modify',
-        //     where: this.id,
-        //     who: sprite.id
-        // });
-        // ScratchJr.storyStart('Page.prototype.modifySpriteName');
+        var sprite = gn(unescape(sid)).owner;
+        if (!sprite) {
+            sprite = ScratchJr.getSprite();
+        }
+        sprite.name = cid;
+        sprite.thumbnail.childNodes[1].textContent = cid;
+        Undo.record({
+            action: 'modify',
+            where: this.id,
+            who: sprite.id
+        });
+        ScratchJr.storyStart('Page.prototype.modifySpriteName');
     }
 }
