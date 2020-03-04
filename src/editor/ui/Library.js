@@ -31,7 +31,7 @@ export default class Library {
         var myname = newHTML('p', undefined, as);
         myname.setAttribute('id', 'assetname');
         myname.textContent = '';
-        // Library.layoutHeader();
+        Library.layoutHeader();
     }
 
     static createScrollPanel () {

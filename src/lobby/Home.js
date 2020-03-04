@@ -162,7 +162,6 @@ export default class Home {
     }
 
     static createNewProject () {
-        console.log("what1")
         iOS.analyticsEvent('lobby', 'project_created');
         var obj = {};
         // XXX: for localization, the new project name should likely be refactored
@@ -186,8 +185,7 @@ export default class Home {
         var pn = [];
         var div = gn('scrollarea');
         for (var i = 0; i < div.childElementCount; i++) {
-            console.log
-            if (div.childNodes[0].id == 'newproject') {
+            if (div.childNodes[i].id == 'newproject') {
                 continue;
             }
             pn.push(div.childNodes[i].childNodes[1].childNodes[0].textContent);

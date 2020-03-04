@@ -1,10 +1,10 @@
- .modal-outer {
+.modal-outer {
     display: table;
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
 }
 
@@ -12,7 +12,7 @@
     display: table-cell;
     vertical-align: middle;
     pointer-events: none;
-} 
+}
 
 .modal-backdrop {
     background-color: #000000;
@@ -48,14 +48,9 @@
 .modal-body {
     width: 420px;
     height: 113px;
-} 
+}
 
-
-
-
-
-
- /* .loadscreencover{
+.loadscreencover{
     position: absolute;
     left: 20px;
     top: 27px;
@@ -88,15 +83,13 @@
     top: 0px;
     width: 420px;
     height: 113px;
-} */
+}
 
-/* 
+
 ///////////////////
 // record
-/////////////////// */
+///////////////////
 
-
-/* 녹음 기능 추후 삭제 (js에서 블록 기능 삭제 후 UI 제거*/
 .record-backdrop.fade.out {
     -webkit-transition: opacity 1s linear;
     opacity: 0;
@@ -110,7 +103,7 @@
     width: ${241 * scaleMultiplier}px;
     height: ${219 * scaleMultiplier}px;
     margin: 1px 1px 0px;
-    background-color: #F9A737;
+    background-color: #f9f9f9;
     border: 1px solid #999;
     -webkit-border-radius: ${6 * scaleMultiplier}px;
     -moz-border-radius: ${6 * scaleMultiplier}px;
@@ -132,8 +125,7 @@
     width: ${65 * scaleMultiplier}px;
     height: ${65 * scaleMultiplier}px;
     zoom: 75%;
-    background: url('../assets/paint/ok.svg') 
-    no-repeat left top;
+    background: url('../assets/paint/ok.svg') no-repeat left top;
     background-size: 101%;
 }
 
@@ -147,7 +139,7 @@
     opacity: 0;
 }
 
-/* 레코드 기능 바 */
+
 .record	.toolbar {
     position: absoulte;
     width: ${239 * scaleMultiplier}px;
@@ -163,12 +155,11 @@
     -webkit-border-top-right-radius: ${6 * scaleMultiplier}px;
 }
 
- .toolbar .actions {
+.toolbar .actions {
     margin: ${5 * scaleMultiplier}px ${5 * scaleMultiplier}px ${5 * scaleMultiplier}px;
     height: ${65 * scaleMultiplier}px;
 }
 
-/* 레코드 기능 ok 버튼 */
 .actions .recordbuttons {
     float: right;
     display: block;
@@ -178,24 +169,23 @@
     height: ${44 * scaleMultiplier}px;
 }
 
-/* 레코드 기능 마이크 icon */
-/* .actions .microphone {
+.actions .microphone {
     float: left;
     width: ${45 * scaleMultiplier}px;
     height: ${65 * scaleMultiplier}px;
     margin: -${5 * scaleMultiplier}px ${5 * scaleMultiplier}px 0px;
     background: url('../assets/lib/mic.svg');
     background-size: 101%;
-}  */
+}
 
- *.soundbox {
+*.soundbox {
     display: inline-block;
     position: relative;
     padding: 0px;
     margin: 0px;
     left: ${20 * scaleMultiplier}px;
     top: ${20 * scaleMultiplier}px;
-    width: ${400 * scaleMultiplier}px;
+    width: ${239 * scaleMultiplier}px;
     height: ${151 * scaleMultiplier}px;
 }
 
@@ -203,28 +193,27 @@
     position: relative;
     display: inline-block;
     margin: ${20 * scaleMultiplier}px ${5 * scaleMultiplier}px 0px;
-    width: ${45 * scaleMultiplier}px;
+    width: ${200 * scaleMultiplier}px;
     height: ${45 * scaleMultiplier}px;
-} 
+}
 
- .controlwrap{
+.controlwrap{
     margin: 0px ${10 * scaleMultiplier}px 0px;
     padding: 0px 0px 0px;
     display: inline-block;
-    background: #e80c0c
     width: ${45 * scaleMultiplier}px;
     height: ${45 * scaleMultiplier}px;
 }
 
-/* .playsnd {
+.playsnd {
     display: inline-block;
     width: ${45 * scaleMultiplier}px;
     height: ${45 * scaleMultiplier}px;
 	background: url('../assets/lib/playoff.svg');
     background-size: 101%;
-} */
+}
 
-/* .stopsnd {
+.stopsnd {
     display: inline-block;
     width: ${45 * scaleMultiplier}px;
     height: ${45 * scaleMultiplier}px;
@@ -238,9 +227,9 @@
     height: ${45 * scaleMultiplier}px;
     background: url('../assets/lib/recordoff.svg');
     background-size: 101%;
-}  */
+}
 
-/* .playsnd.on{ background: url('../assets/lib/playon.svg'); background-size: 101%; }
+.playsnd.on{ background: url('../assets/lib/playon.svg'); background-size: 101%; }
 .playsnd.off{ background: url('../assets/lib/playoff.svg'); background-size: 101%; }
 
 .recordsnd.on{ background: url('../assets/lib/recordon.svg'); background-size: 101%; }
@@ -251,7 +240,7 @@
 
 .undowrap.select {background: rgba(0,0,0, 0.15);}
 
-.undowrap.unselect {background: none;} */
+.undowrap.unselect {background: none;}
 
 .soundvolume {
     position: relative;
@@ -260,15 +249,14 @@
     width: ${197 * scaleMultiplier}px;
     height: ${44 * scaleMultiplier}px;
 }
-/* ? */
+
 .indicator {
     margin: ${scaleMultiplier}px ${scaleMultiplier}px 0px;
     padding: 0px;
     display: inline-block;
     width: ${13 * scaleMultiplier}px;
     height: ${44 * scaleMultiplier}px;
-    background : #e80c0c
-    /* background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)); */
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
     -webkit-border-radius: ${5 * scaleMultiplier}px;
     -moz-border-radius: ${5 * scaleMultiplier}px;
     border-radius: ${3 * scaleMultiplier}px;

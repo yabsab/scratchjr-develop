@@ -7,14 +7,9 @@ import Events from '../../utils/Events';
 import Localization from '../../utils/Localization';
 import {gn, scaleMultiplier, isTablet, newDiv, setProps, newP, newCanvas} from '../../utils/lib';
 
-// let width = 482;
-// let height = 362;
-// let size = 24;
-let width = 0;
-let height = 0;
-let size = 1;
-
-
+let width = 482;
+let height = 362;
+let size = 24;
 let hidden = true;
 
 export default class Grid {
@@ -27,22 +22,19 @@ export default class Grid {
     }
 
     static init (div) {
-        var w = 0;
-        var h = 0;
-
-        //  var w = div.offsetWidth;
-        // var h = div.offsetHeight;
+        var w = div.offsetWidth;
+        var h = div.offsetHeight;
         var grid = newDiv(div, 0, 0, width, height, {
             position: 'absolute',
             zIndex: ScratchJr.layerTop
         });
-        // Grid.setScaleAndPosition(grid, scaleMultiplier, 47, 75, width, height);
+        Grid.setScaleAndPosition(grid, scaleMultiplier, 47, 75, width, height);
         grid.setAttribute('id', 'livegrid');
-         Grid.drawLines(grid, width, height);
-         Grid.createNumbering(w, h);
-         Grid.createCursor();
-         Grid.createYcursor();
-         Grid.createXcursor();
+        Grid.drawLines(grid, width, height);
+        Grid.createNumbering(w, h);
+        Grid.createCursor();
+        Grid.createYcursor();
+        Grid.createXcursor();
     }
 
     static setScaleAndPosition (grid, scale, x, y, w, h) {
@@ -57,15 +49,15 @@ export default class Grid {
         var cnv = newCanvas(grid, 0, 0, w, h, {
             position: 'absolute'
         });
-        cnv.style.opacity = 0;
+        cnv.style.opacity = 0.5;
         var ctx = cnv.getContext('2d');
         ctx.strokeStyle = '#B3B3B3';
-        ctx.lineWidth = 0;
+        ctx.lineWidth = 1;
         var dx = size;
         // vertical
         for (var i = 0; i < 480 / size; i++) {
             ctx.moveTo(dx, 0);
-            ctx.lineTo(dx, 0);
+            ctx.lineTo(dx, 360);
             ctx.stroke();
             dx += size;
         }
@@ -73,7 +65,7 @@ export default class Grid {
         // horizontal
         for (i = 0; i < 360 / size; i++) {
             ctx.moveTo(0, dy);
-            ctx.lineTo(0, dy);
+            ctx.lineTo(480, dy);
             ctx.stroke();
             dy += size;
         }
@@ -134,10 +126,10 @@ export default class Grid {
             zIndex: 20
         });
         num.setAttribute('class', 'circle');
-        // num.style.background = '#6a99c1';
+        num.style.background = '#6a99c1';
         num.setAttribute('id', 'ycursor');
         var p = newP(num, 15, {});
-        // p.setAttribute('class', 'circlenum');
+        p.setAttribute('class', 'circlenum');
     }
 
     static createXcursor () {
@@ -146,10 +138,10 @@ export default class Grid {
             zIndex: 20
         });
         num.setAttribute('class', 'circle');
-        // num.style.background = '#6a99c1';
+        num.style.background = '#6a99c1';
         num.setAttribute('id', 'xcursor');
         var p = newP(num, 1, {});
-        // p.setAttribute('class', 'circlenum');
+        p.setAttribute('class', 'circlenum');
     }
 
     static createCursor () {

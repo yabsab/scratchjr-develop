@@ -49,21 +49,21 @@ export default class UI {
 
     // Helps debug on Android 4.2 by enabling the user to type in a
     // JavaScript expression and evaluate the output and render to console.log.
-    static addDebugControl () {
+    /*static addDebugControl () {
         var div = newHTML('div', 'debug', document.body);
         setProps(div.style, {
             position: 'absolute',
             left: '0px',
             top: '0px',
-            width: '0px',
-            height: '0px',
+            width: '64px',
+            height: '64px',
             background: 'red',
             zIndex: 30000
         });
         div.ontouchstart = function (e) {
             console.log(eval(prompt('Enter Debug JavaScript')));
         };
-    }
+    }*/
 
     /** Tweak some elements depending on aspect ratio */
     static aspectRatioAdjustment () {
@@ -87,7 +87,7 @@ export default class UI {
     }
 
     static leftPanel (div) {
-        //sprite library
+        // sprite library
         var sl = newHTML('div', 'leftpanel', div);
         var flip = newHTML('div', 'flipme', sl);
         flip.setAttribute('id', 'flip');
@@ -114,11 +114,8 @@ export default class UI {
         var infobox = newHTML('div', 'infobox fade', frame);
         infobox.setAttribute('id', 'infobox');
         okclicky = newHTML('div', 'paintdone', infobox);
-       
         newHTML('div', 'infoboxlogo', infobox);
-       
         var nameField = UI.addEditableName(infobox);
-       
         var staticinfo = newHTML('div', 'fixedinfo', infobox);
         var author = newHTML('div', 'infolabel', staticinfo);
         author.setAttribute('id', 'deviceName');
@@ -129,8 +126,8 @@ export default class UI {
             parentsSection.setAttribute('id', 'parentsection');
 
             var parentsButton = newHTML('div', 'infoboxParentsButton', parentsSection);
-            // parentsButton.id = 'infoboxParentsSectionButton';
-            // parentsButton.textContent = Localization.localize('FOR_PARENTS');
+            parentsButton.id = 'infoboxParentsSectionButton';
+            parentsButton.textContent = Localization.localize('FOR_PARENTS');
 
             // Sharing
             var shareButtons = newHTML('div', 'infoboxShareButtons', infobox);
@@ -140,7 +137,7 @@ export default class UI {
             shareEmail.id = 'infoboxShareButtonEmail';
             shareEmail.textContent = Localization.localize('SHARING_BY_EMAIL');
             shareEmail.ontouchstart = function (e) {
-                // UI.infoDoShare(e, nameField, shareLoadingGif, EMAILSHARE);
+                UI.infoDoShare(e, nameField, shareLoadingGif, EMAILSHARE);
             };
 
             if (isAndroid) {
@@ -153,16 +150,14 @@ export default class UI {
                 var shareAirdrop = newHTML('div', 'infoboxShareButton', shareButtons);
                 shareAirdrop.id = 'infoboxShareButtonAirdrop';
                 shareAirdrop.textContent = Localization.localize('SHARING_BY_AIRDROP');
-                // shareAirdrop.style.float = 'right';
-            
-                
+                shareAirdrop.style.float = 'right';
                 shareAirdrop.ontouchstart = function (e) {
                     UI.infoDoShare(e, nameField, shareLoadingGif, AIRDROPSHARE);
                 };
             }
 
             iOS.deviceName(function (name) {
-                // gn('deviceName').textContent = name;
+                gn('deviceName').textContent = name;
             });
 
             var shareLoadingGif = newHTML('img', 'infoboxShareLoading', shareButtons);
@@ -242,7 +237,7 @@ export default class UI {
     }
 
     static showSharing (evt, shareButtons, parentsSection) {
-        shareButtons.style.visibility = 'hidden';
+        shareButtons.style.visibility = 'visible';
         parentsSection.style.visibility = 'hidden';
     }
 
@@ -295,8 +290,7 @@ export default class UI {
         var pname = newHTML('form', 'projectname', p);
         pname.name = 'projectname';
         pname.id = 'title';
-        pname.onsubmit = function (evt)
-         {
+        pname.onsubmit = function (evt) {
             submitChange(evt);
         };
         var ti = newHTML('input', 'pnamefield', pname);
@@ -318,21 +312,15 @@ export default class UI {
                 AndroidInterface.scratchjr_forceShowKeyboard();
             }
         };
-
-        ti.onkeypress = function (evt) 
-        {
+        ti.onkeypress = function (evt) {
             handleNamePress(evt);
         };
-        function handleNamePress (e) 
-        {
+        function handleNamePress (e) {
             var key = e.keyCode || e.which;
             if (key == 13) {
                 submitChange(e);
             }
         }
-
-
-
         function submitChange (e) {
             e.preventDefault();
             var input = e.target;
@@ -430,7 +418,7 @@ export default class UI {
         if (ScratchJr.isEditable()) {
             (document.forms.projectname.myproject).value = Project.metadata.name;
         } else {
-            // gn('pname').textContent = Project.metadata.name;
+            gn('pname').textContent = Project.metadata.name;
         }
         gn('infobox').className = 'infobox fade in';
         if (ScratchJr.isEditable()) {
@@ -481,7 +469,6 @@ export default class UI {
     static layoutLibrary (sl) {
         var sprites = newHTML('div', 'thumbpanel', sl);
         sprites.setAttribute('id', 'library');
-        
         //scrolling area
         var p = newHTML('div', 'spritethumbs', sprites);
         var div = newHTML('div', 'spritecc', p);
@@ -606,40 +593,40 @@ export default class UI {
     //////////////////////////////////
 
     static spriteThumbsActions (e) {
-        // if (isTablet && e.touches && (e.touches.length > 1)) {
-        //     return;
-        // }
-        // if (ScratchJr.onHold) {
-        //     return;
-        // }
-        // var t;
-        // var pt = Events.getTargetPoint(e);
-        // if (window.event) {
-        //     t = window.event.srcElement;
-        // } else {
-        //     t = e.target;
-        // }
-        // //	if ((t.nodeName == "INPUT") || (t.nodeName == "FORM")) return;
-        // e.preventDefault();
-        // e.stopPropagation();
-        // ScratchJr.blur();
-        // t.focus();
-        // if (t.className == 'brush') {
-        //     UI.putInPaintEditor(e); return;
-        // }
-        // var tb = Thumbs.getType(t, 'spritethumb');
-        // if (!tb) {
-        //     if (ScratchJr.shaking) {
-        //         ScratchJr.clearSelection();
-        //     }
-        //     return;
-        // }
-        // var x = localx(t, pt.x);
-        // if (tb && (x < 70) && ScratchJr.isEditable()) {
-        //     Thumbs.startDragThumb(e, tb);
-        // } else {
-        //     UI.startSpriteScroll(e, tb);
-        // }
+        if (isTablet && e.touches && (e.touches.length > 1)) {
+            return;
+        }
+        if (ScratchJr.onHold) {
+            return;
+        }
+        var t;
+        var pt = Events.getTargetPoint(e);
+        if (window.event) {
+            t = window.event.srcElement;
+        } else {
+            t = e.target;
+        }
+        //	if ((t.nodeName == "INPUT") || (t.nodeName == "FORM")) return;
+        e.preventDefault();
+        e.stopPropagation();
+        ScratchJr.blur();
+        t.focus();
+        if (t.className == 'brush') {
+            UI.putInPaintEditor(e); return;
+        }
+        var tb = Thumbs.getType(t, 'spritethumb');
+        if (!tb) {
+            if (ScratchJr.shaking) {
+                ScratchJr.clearSelection();
+            }
+            return;
+        }
+        var x = localx(t, pt.x);
+        if (tb && (x < 70) && ScratchJr.isEditable()) {
+            Thumbs.startDragThumb(e, tb);
+        } else {
+            UI.startSpriteScroll(e, tb);
+        }
     }
 
     static startSpriteScroll (e, tb) {
@@ -729,15 +716,15 @@ export default class UI {
     //////////////////////////////
 
     static stageArea (inner) {
-         var outerDiv = newHTML('div', 'centerpanel', inner);
+        var outerDiv = newHTML('div', 'centerpanel', inner);
         var div = newHTML('div', 'stageframe', outerDiv);
-         div.setAttribute('id', 'stageframe');
+        div.setAttribute('id', 'stageframe');
         ScratchJr.stage = new Stage(div);
         Grid.init(div);
-         if (ScratchJr.isEditable()) {
+        if (ScratchJr.isEditable()) {
             UI.creatTopBarClicky(div, 'addtext', 'addText', UI.addText);
             UI.creatTopBarClicky(div, 'setbkg', 'changeBkg', UI.addBackground);
-         }
+        }
         UI.creatTopBarClicky(div, 'grid', 'gridToggle off', UI.switchGrid);
         UI.creatTopBarClicky(div, 'go', 'go on', UI.toggleRun);
         UI.creatTopBarClicky(div, 'resetall', 'resetall', UI.resetAllSprites);

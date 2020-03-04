@@ -1,17 +1,13 @@
- /* 프로젝트 섬네일 시작  */
- 
- 
- .projectthumb {
+.projectthumb {
     display: inline-block;
     position: relative;
     margin: 0px;
     padding: 0px;
-    width: ${css_vw(28.68)};
+    width: ${css_vw(21.68)};
     height: ${css_vh(26.04)};
     vertical-align: top;
 }
 
-/* 샘플 이미지 */
 .aproject {
     margin: 0px;
     padding: 0px;
@@ -62,7 +58,7 @@
     font-weight: bold;
     text-align: center;
     color: #355E7C;
-    font-size: ${40 * scaleMultiplier}px;
+    font-size: ${13 * scaleMultiplier}px;
     width: ${css_vh(25)};
     margin: 0;
     overflow: hidden;
@@ -84,11 +80,11 @@
 .samplethumb > p {
     font-weight: bold;
     text-align: center;
-    color: #c2343c;
+    color: #C18134;
     width: 100%;
     margin: ${5 * scaleMultiplier}px auto;
     overflow: hidden;
-    font-size: ${css_vh(15)};
+    font-size: ${css_vh(2.5)};
     font-weight: bold;
     text-overflow: ellipsis;
     vertical-align: middle;
@@ -97,11 +93,11 @@
 .samplethumb .thumb {
     position: relative;
     margin: 0 auto;
-    width: 50.8%;
+    width: 84.8%;
     height: 78%;
     -webkit-transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
-    -webkit-tap-highlight-color: transparent;
+        -webkit-tap-highlight-color: transparent;
 }
 
 .samplethumb .thumb > div.woodframe {
@@ -205,4 +201,4 @@
     padding: 0px;
     margin: 0px;
     width: 100%;
-} 
+}

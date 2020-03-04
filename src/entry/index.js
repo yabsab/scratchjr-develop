@@ -4,7 +4,6 @@ import iOS from '../iPad/iOS';
 import UI from '../editor/ui/UI';
 import Localization from '../utils/Localization';
 import AppUsage from '../utils/AppUsage';
-import Home from '../lobby/Home';
 
 export function indexMain () {
     gn('gettings').ontouchend = indexGettingstarted;
@@ -17,7 +16,6 @@ export function indexMain () {
         indexFirstTime();
     }
 
-    //pbs 무엇
     if (window.Settings.edition == 'PBS') {
         gn('topbar-moreapps').textContent = Localization.localize('PBS_MORE_APPS');
         gn('startButton').textContent = Localization.localize('PBS_START');
@@ -39,17 +37,17 @@ export function indexMain () {
 }
 
 function indexFirstTime () {
-    // gn('authors').className = 'credits show';
-    // gn('authorsText').className = 'creditsText show';
+    gn('authors').className = 'credits show';
+    gn('authorsText').className = 'creditsText show';
     if (window.Settings.edition == 'PBS') {
         gn('pbschars').className = 'characters hide';
         gn('startcode').className = 'catlogo show';
-         gn('topbar').className = 'topbar hide';
-         gn('startButton').className = 'startButton hide';
+        gn('topbar').className = 'topbar hide';
+        gn('startButton').className = 'startButton hide';
     } else {
-         gn('purpleguy').className = 'purple show';
-         gn('blueguy').className = 'blue show';
-         gn('redguy').className = 'red show';
+        gn('purpleguy').className = 'purple show';
+        gn('blueguy').className = 'blue show';
+        gn('redguy').className = 'red show';
     }
     iOS.askpermission(); // ask for sound recording
     setTimeout(function () {
@@ -66,7 +64,6 @@ function indexFirstTime () {
 }
 
 function indexLoadOptions () {
-   
     if (window.Settings.edition != 'PBS' && AppUsage.askForUsage()) {
         indexLoadUsage();
     } else {
@@ -75,7 +72,8 @@ function indexLoadOptions () {
 }
 
 function indexLoadStart (afterUsage) {
-
+    gn('authors').className = 'credits hide';
+    gn('authorsText').className = 'creditsText hide';
 
     if (window.Settings.edition == 'PBS') {
         gn('pbschars').className = 'characters show';
@@ -98,27 +96,14 @@ function indexLoadStart (afterUsage) {
         }
         iOS.setAnalyticsPlacePref(AppUsage.currentUsage);
     }
-
-
-    if (afterUsage) {
-        gn('catface').className = 'catface show';
-        gn('jrlogo').className = 'jrlogo show';
-        gn('usageQuestion').className = 'usageQuestion hide';
-        gn('usageSchool').className = 'usageSchool hide';
-        gn('usageHome').className = 'usageHome hide';
-        gn('usageOther').className = 'usageOther hide';
-        gn('usageNoanswer').className = 'usageNoanswer hide';
-    }
-    iOS.setAnalyticsPlacePref(AppUsage.currentUsage);
     gn('gettings').className = 'gettings show';
     gn('startcode').className = 'startcode show';
-    document.ontouchmove = function (e) 
-    {
+    document.ontouchmove = function (e) {
         e.preventDefault();
     };
-    // if (isAndroid) {
-    //     AndroidInterface.notifySplashDone();
-    // }
+    if (isAndroid) {
+        AndroidInterface.notifySplashDone();
+    }
 }
 
 function indexLoadUsage () {
@@ -148,22 +133,13 @@ function indexLoadUsage () {
 }
 
 function indexGohome () {
-    
-    // window.location.href = 'editor.html';
-    iOS.setfile('homescroll.sjr', 1, function () {
+    iOS.setfile('homescroll.sjr', 0, function () {
         doNext();
     });
     function doNext () {
-          window.location.href = 'home.html';
-        // 홈화면으로 이동 
-        // window.location.href = 'index.html?back=yes'
-       
-        
+        window.location.href = 'home.html';
     }
-
-
 }
-
 
 function indexGoSettings () {
     // Switch to the settings selection page

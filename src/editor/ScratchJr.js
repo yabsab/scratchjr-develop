@@ -99,14 +99,12 @@ export default class ScratchJr {
         stage = newStage;
     }
 
-    static get inFullscreen ()
-     {
-        console.log("test1")
+    static get inFullscreen () {
         return inFullscreen;
-
     }
+
+
     static get stagecolor () {
-         console.log("test1")
         return stagecolor;
     }
 
@@ -180,7 +178,7 @@ export default class ScratchJr {
 
     static appinit (v) {
         stagecolor = window.Settings.stageColor;
-         defaultSprite = window.Settings.defaultSprite;
+        defaultSprite = window.Settings.defaultSprite;
         version = v;
         document.body.scrollTop = 0;
         time = (new Date()) - 0;

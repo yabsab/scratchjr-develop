@@ -10,7 +10,7 @@ export default class Runtime {
         this.intervalId = undefined;
         this.yield = false;
     }
- 
+
     beginTimer () {
         if (this.intervalId != null) {
             window.clearInterval(this.intervalId);
