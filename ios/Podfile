@@ -4,9 +4,6 @@ platform :ios, '8.0'
 # add the Firebase pod for Google Analytics
 pod 'Firebase/Analytics'
 
-target 'ScratchJr Free' do
+target 'ScratchJr' do
 end
 
-target 'ScratchJrTests' do
-
-end

@@ -1,4 +1,6 @@
 #import "ScratchJr.h"
+#import "ScratchJr-Swift.h"
+
 // @import MessageUI;
 @import Firebase;
 
@@ -28,6 +30,10 @@ JSContext *js;
     [super viewDidLoad];
     [self registerDefaultsFromSettingsBundle];
     webview = (UIWebView*)[self view] ;
+    
+    CreamoBle *test = [[CreamoBle alloc]init];
+    [test test];
+    
     [webview setDelegate:self];
     [Database open:@"ScratchJr"];
     [ScratchJr cameraInit];
