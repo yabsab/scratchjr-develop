@@ -96,7 +96,8 @@ body {
 #interface-vertical-line-stage-1 {
 	height: ${css_vh(26.4)};
 	top: ${css_vh(-0.82)};
-	left: ${css_vh(39.97)};
+    left: ${css_vh(39.97)};
+    
 }
 
 #interface-horizontal-line-stage-1 {

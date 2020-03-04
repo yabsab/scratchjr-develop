@@ -103,11 +103,11 @@ export default class Sprite {
 
     setSVG (str) {
         var xmlDoc = new DOMParser().parseFromString(str, 'text/xml');
-        var extxml = document.importNode(xmlDoc.documentElement, true);
+         var extxml = document.importNode(xmlDoc.documentElement, true);
         if (extxml.childNodes[0].nodeName == '#comment') {
             extxml.removeChild(extxml.childNodes[0]);
         }
-        this.svg = extxml;
+          this.svg = extxml;
     }
 
     setCostume (dataurl, fcn) {
@@ -131,17 +131,18 @@ export default class Sprite {
             sprite.displaySprite(fcn);
         }
     }
-
+    // 코딩 에디터 부분에 이미지 표시 함수 디스플레이 할 이유가 없음 
     displaySprite (whenDone) {
-        var w = this.img.width;
-        var h = this.img.height;
+         var w = 0
+         var h = 0
+        
         this.div.style.width = this.img.width + 'px';
         this.div.style.height = this.img.height + 'px';
         this.cx = Math.floor(w / 2);
         this.cy = Math.floor(h / 2);
         this.w = w;
         this.h = h;
-        this.setPos(this.xcoor, this.ycoor);
+        // this.setPos(this.xcoor, this.ycoor);
         this.doRender(whenDone);
     }
 
@@ -161,8 +162,11 @@ export default class Sprite {
         var w, h, extxml;
         if (isAndroid) {
             this.border = document.createElement('canvas');
-            w = this.originalImg.width;
-            h = this.originalImg.height;
+            // w = this.originalImg.width;
+            // h = this.originalImg.height;
+
+            w = 0;
+            h = 0;
             extxml = this.svg;
             this.border.width = w;
             this.border.height = h;
@@ -186,23 +190,22 @@ export default class Sprite {
     spriteThumbnail (p) {
         var tb = newHTML('div', 'spritethumb off', p);
         tb.setAttribute('id', getIdFor('spritethumb'));
-        tb.type = 'spritethumb';
-        tb.owner = this.id;
-        var c = newHTML('canvas', 'thumbcanvas', tb);
-
+        // tb.type = 'spritethumb';
+        // tb.owner = this.id;
+        // var c = newHTML('canvas', 'thumbcanvas', tb);
         // TODO: Merge these to get better thumbnail rendering on iOS
         if (isAndroid) {
-            setCanvasSizeScaledToWindowDocumentHeight(c, 64, 64);
+            setCanvasSizeScaledToWindowDocumentHeight(c, 0, 0);
         } else {
-            setCanvasSize(c, 64, 64);
+            setCanvasSize(c, 0, 0);
         }
 
-        this.drawMyImage(c, c.width, c.height);
-        p = newHTML('p', 'sname', tb);
-        p.textContent = this.name;
-        newHTML('div', 'brush', tb);
-        this.thumbnail = tb;
-        return tb;
+        // this.drawMyImage(c, c.width, c.height);
+        // p = newHTML('p', 'sname', tb);
+        // p.textContent = this.name;
+        // newHTML('div', 'brush', tb);
+        // this.thumbnail = tb;
+        // return tb;
     }
 
     updateSpriteThumb () {
@@ -211,39 +214,40 @@ export default class Sprite {
             return;
         }
         var cnv = tb.childNodes[0];
-        this.drawMyImage(cnv, cnv.width, cnv.height);
+        // this.drawMyImage(cnv, cnv.width, cnv.height);
+        this.drawMyImage(cnv, 0, 0);
         tb.childNodes[1].textContent = this.name;
     }
 
     drawMyImage (cnv, w, h) {
-        if (!this.img) {
-            return;
-        }
-        setCanvasSize(cnv, w, h);
+        // if (!this.img) {
+        //     return;
+        // }
+        // setCanvasSize(cnv, w, h);
 
-        // TODO: Merge these to get better thumbnail rendering on iOS
-        var img;
-        if (isAndroid) {
-            img = this.originalImg;
-        } else {
-            img = this.img;
-        }
-        var imgw = img.naturalWidth ? img.naturalWidth : img.width;
-        var imgh = img.naturalHeight ? img.naturalHeight : img.height;
-        var scale = Math.min(w / imgw, h / imgh);
-        var ctx = cnv.getContext('2d');
-        var iw = Math.floor(scale * imgw);
-        var ih = Math.floor(scale * imgh);
-        var ix = Math.floor((w - (scale * imgw)) / 2);
-        var iy = Math.floor((h - (scale * imgh)) / 2);
-        ctx.drawImage(this.border, 0, 0, this.border.width, this.border.height, ix, iy, iw, ih);
-        if (!img.complete) {
-            img.onload = function () {
-                ctx.drawImage(img, 0, 0, imgw, imgh, ix, iy, iw, ih);
-            };
-        } else {
-            ctx.drawImage(img, 0, 0, imgw, imgh, ix, iy, iw, ih);
-        }
+        // // TODO: Merge these to get better thumbnail rendering on iOS
+        // var img;
+        // if (isAndroid) {
+        //     img = this.originalImg;
+        // } else {
+        //     img = this.img;
+        // }
+        // var imgw = img.naturalWidth ? img.naturalWidth : img.width;
+        // var imgh = img.naturalHeight ? img.naturalHeight : img.height;
+        // var scale = Math.min(w / imgw, h / imgh);
+        // var ctx = cnv.getContext('2d');
+        // var iw = Math.floor(scale * imgw);
+        // var ih = Math.floor(scale * imgh);
+        // var ix = Math.floor((w - (scale * imgw)) / 2);
+        // var iy = Math.floor((h - (scale * imgh)) / 2);
+        // ctx.drawImage(this.border, 0, 0, this.border.width, this.border.height, ix, iy, iw, ih);
+        // if (!img.complete) {
+        //     img.onload = function () {
+        //         ctx.drawImage(img, 0, 0, imgw, imgh, ix, iy, iw, ih);
+        //     };
+        // } else {
+        //     ctx.drawImage(img, 0, 0, imgw, imgh, ix, iy, iw, ih);
+        // }
     }
 
     ///////////////////////////////////////////////////////////////////////////////

@@ -11,7 +11,7 @@ body {
 }
 
 .block-category-header {
-    color: white;
+    color: red;
     text-transform: uppercase;
     padding-left: ${css_vh(2.47)};
     padding-top: ${css_vh(1.64)};

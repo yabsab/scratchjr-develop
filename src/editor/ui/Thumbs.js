@@ -391,9 +391,9 @@ export default class Thumbs {
         page.setAttribute('class', 'pagethumb drop');
     }
 
-    //////////////////////////////////////
+    // ////////////////////////////////////
     //   Library
-    /////////////////////////////////////
+    // ///////////////////////////////////
 
     static updateSprites () {
         var costumes = gn('spritecc');
@@ -486,7 +486,7 @@ export default class Thumbs {
     }
 
     static selectThisSprite (spr) {
-        var costumes = gn('spritecc');
+        var costumes = gn('');
         var el = spr.thumbnail;
         for (var i = 0; i < costumes.childElementCount; i++) {
             var th = costumes.childNodes[i];
@@ -539,7 +539,7 @@ export default class Thumbs {
             zoom: (100 / window.devicePixelRatio) + '%'
         };
         var spr = gn(Events.dragthumbnail.owner).owner;
-        Events.dragcanvas = document.createElement('canvas');
+        // Events.dragcanvas = document.createElement('canvas');
         spr.drawMyImage(Events.dragcanvas,
             76 * scaleMultiplier * window.devicePixelRatio,
             (76 - 12) * scaleMultiplier * window.devicePixelRatio

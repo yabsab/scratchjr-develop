@@ -1,6 +1,6 @@
 /* frame */
 
-.libframe {
+ .libframe {
     position: absolute;
     z-index: 10000;
     background: url('../assets/libbkg.png');
@@ -15,11 +15,11 @@
 
 .libframe.appear {display: block;}
 
-.libframe.disappear {display: none;}
+.libframe.disappear {display: none;} */
 
 /* Header */
 
-.topbar {
+ .topbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -40,9 +40,9 @@
 .topbar .actions {
     margin: ${css_vh(0.65)} ${css_vh(0.00)} ${css_vh(0.00)};
     height: ${css_vh(8.46)};
-}
+} 
 
-.assetname-container {
+ .assetname-container {
     position: absolute;
     top: ${css_vh(3)};
     width: 100%;
@@ -59,7 +59,7 @@
 .assetname p{
     text-align: center;
     font-size: ${css_vh(4.17)};
-    /*  font-weight: bold;  */
+    font-weight: bold;  
     color:  #4682B5;
     font-weight: 500 !important;
     text-shadow: 0px -${1 * scaleMultiplier}px #0D1D28;
@@ -68,18 +68,18 @@
     cursor: default;
     outline: ${css_vh(0.00)};
     height: ${css_vh(5.21)};
-}
+} 
 
-.actions .bkgbuttons {
+ .actions .bkgbuttons {
     float: right;
     display: block;
     margin: ${css_vh(0.00)};
     padding: ${css_vh(0.00)};
     width: ${css_vh(31.25)};
     height: ${css_vh(8.46)};
-}
+} 
 
-.actions .shapebuttons {
+/* .actions .shapebuttons {
     float: right;
     display: block;
     margin: ${css_vh(0.00)};
@@ -87,7 +87,7 @@
     width: ${css_vh(54.30)};
     height: ${css_vh(8.46)};
     background: like
-}
+} */
 
 .painticon {
     display: inline-block;
@@ -110,16 +110,17 @@
     background: url('../assets/paint/ok.svg');
     background-size: 100%;
     -webkit-tap-highlight-color: transparent;
-}
+} 
 
-.cancelicon {
+/* webview pixelates the image unless we do this */
+ .cancelicon {
     display: inline-block;
     position: relative;
     margin: ${css_vh(0.00)} ${css_vh(0.91)} ${css_vh(0.00)};
     width: ${css_vh(8.46)};
     height: ${css_vh(8.46)};
     background: url('../assets/paint/cancel.svg');
-    background-size: 100.5%; /* webview pixelates the image unless we do this */
+    background-size: 100.5%; 
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -127,20 +128,21 @@
      background: url('../assets/paint/okPressed.svg');
      background-size: 100%;
 }
+/* webview pixelates the image unless we do this */
 .cancelicon:active {
      background: url('../assets/paint/cancelPressed.svg');
-     background-size: 100.5%; /* webview pixelates the image unless we do this */
+     background-size: 100.5%; 
+
+
 }
+
 .painticon:active {
      background: url('../assets/paint/paintbrushPressed.svg');
      background-size: 100%;
-}
+} 
 
-/*
-Assets chooser
-*/
-
-*.innerlibrary {
+/*Assets chooser*/
+ *.innerlibrary {
     padding: ${css_vh(11.72)} ${css_vh(0.00)} ${css_vh(6.51)};
     margin: ${css_vh(0.00)};
     margin-left: auto;
@@ -178,4 +180,4 @@ hr.bigdivide{
 .assetbox.on {
     background: url('../assets/paint/thumbOn.png') no-repeat center top;
     background-size: 100%;
-}
+} 

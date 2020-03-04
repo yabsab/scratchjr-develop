@@ -93,7 +93,7 @@ div.frame {
     width: ${css_vh(16)};
 }
 
-#topbar ul.topbar-nav .help .help-icon {
+ #topbar ul.topbar-nav .help .help-icon {
     display: block;
     width: ${css_vh(12.63)};
     height: ${css_vh(10.03)};
@@ -101,7 +101,7 @@ div.frame {
     background-size: 101%;
     padding: 0;
     margin: auto auto;
-}
+} 
 
 #topbar ul.topbar-nav .home.on{background: #F9A737; height: ${css_vh(10.81)};}
 #topbar ul.topbar-nav .home.off{background: none; height: auto;}
@@ -140,7 +140,7 @@ div.frame {
     background-size: 101%;
     padding: 0;
     margin: auto auto;
-}
+} 
 
 #topbar ul.reference .book.off>span {background: url('../assets/lobby/bookOff.svg'); background-size: 101%;}
 #topbar ul.reference .book.on>span {background: url('../assets/lobby/bookOn.svg'); background-size: 101%; margin: 0px ${css_vh(0.8)};}
@@ -193,8 +193,9 @@ ul#settings.reference {
 
 .topsection.book {display: none;}
 
+/* lobby topbar 글씨 */
 .topsection>div{
-    color: #fff;
+    color: #111111;
     font-size: ${css_vh(3.5)};
     font-weight: bold;
     text-align: left;
@@ -293,16 +294,18 @@ div.languagebuttons {
     width: 90%;
 }
 
+/* for absolute positioning of pseudo :after element */
+ /* fontsize based on device vertical height doesn't work on 16:9 aspect Android device, just set fixed size font */
 div.localizationselect {
     border-radius: 15px;
     width: ${css_vw(23)};
     height: 47pt;
     float: left;
-    position: relative; /* for absolute positioning of pseudo :after element */
+    position: relative; 
     background-color: #35A8E0;
     color: #fff;
-    /* font-size: ${css_vh(4.5)}; */
-    /* fontsize based on device vertical height doesn't work on 16:9 aspect Android device, just set fixed size font */
+    font-size: ${css_vh(4.5)}; 
+   
     font-size: 34.5px;
     text-align: center;
     margin-left: ${css_vw(3)};
