@@ -29,6 +29,7 @@
 		D965E3971C3EC63A005D792F /* Free-Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D965E3961C3EC63A005D792F /* Free-Images.xcassets */; };
 		DF9078847448FE87342E92DA /* libPods-ScratchJr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F65FC8EA2B7F0328D7651B1 /* libPods-ScratchJr.a */; };
 		F018A209240F880F004C3B19 /* CreamoBle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F018A208240F880F004C3B19 /* CreamoBle.swift */; };
+		F0A6D8EA24123A3900A4E82A /* CreamoBleClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A6D8E924123A3900A4E82A /* CreamoBleClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -41,7 +42,7 @@
 			isEditable = 1;
 			outputFiles = (
 			);
-			script = "";
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
 /* End PBXBuildRule section */
 
@@ -53,9 +54,6 @@
 		204D80B218A4140600ECBB8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		204D80B618A4140600ECBB8B /* ScratchJr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScratchJr-Prefix.pch"; sourceTree = "<group>"; };
 		204D80C118A4140600ECBB8B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		204D80C918A4140600ECBB8B /* ScratchJrTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScratchJrTests-Info.plist"; sourceTree = "<group>"; };
-		204D80CB18A4140600ECBB8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		204D80CD18A4140600ECBB8B /* ScratchJrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScratchJrTests.m; sourceTree = "<group>"; };
 		204D80DC18A4195E00ECBB8B /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		20B2226818A4404B003BDE44 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = SOURCE_ROOT; };
 		20B2226E18A46327003BDE44 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -87,6 +85,8 @@
 		D9DDC1E71B50407A00076A58 /* bin */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bin; path = ../bin; sourceTree = "<group>"; };
 		F018A207240F880F004C3B19 /* ScratchJr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScratchJr-Bridging-Header.h"; sourceTree = "<group>"; };
 		F018A208240F880F004C3B19 /* CreamoBle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreamoBle.swift; sourceTree = "<group>"; };
+		F0A6D8E824123A3900A4E82A /* CreamoBleClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreamoBleClient.h; sourceTree = "<group>"; };
+		F0A6D8E924123A3900A4E82A /* CreamoBleClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreamoBleClient.m; sourceTree = "<group>"; };
 		F8E5189E06A85870C28705B8 /* Pods-ScratchJr Free.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScratchJr Free.release.xcconfig"; path = "Target Support Files/Pods-ScratchJr Free/Pods-ScratchJr Free.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,7 +115,6 @@
 				20B2226818A4404B003BDE44 /* Settings.bundle */,
 				D9104A9F1C220516004D1708 /* Editions */,
 				204D80AE18A4140600ECBB8B /* ScratchJr */,
-				204D80C718A4140600ECBB8B /* ScratchJrTests */,
 				204D80A718A4140600ECBB8B /* Frameworks */,
 				204D80A618A4140600ECBB8B /* Products */,
 				D9DDC1E71B50407A00076A58 /* bin */,
@@ -162,24 +161,6 @@
 			children = (
 				204D80B118A4140600ECBB8B /* InfoPlist.strings */,
 				204D80B618A4140600ECBB8B /* ScratchJr-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		204D80C718A4140600ECBB8B /* ScratchJrTests */ = {
-			isa = PBXGroup;
-			children = (
-				204D80CD18A4140600ECBB8B /* ScratchJrTests.m */,
-				204D80C818A4140600ECBB8B /* Supporting Files */,
-			);
-			path = ScratchJrTests;
-			sourceTree = "<group>";
-		};
-		204D80C818A4140600ECBB8B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				204D80C918A4140600ECBB8B /* ScratchJrTests-Info.plist */,
-				204D80CA18A4140600ECBB8B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -231,13 +212,11 @@
 		D92D0FDF1C33477F00C573AD /* App */ = {
 			isa = PBXGroup;
 			children = (
+				F0A6D8E72412384F00A4E82A /* Main */,
+				F0A6D8E62412384100A4E82A /* bluetooth */,
 				D92D0FBA1C33469A00C573AD /* ScratchJr.h */,
 				D92D0FB21C33469A00C573AD /* AppDelegate.h */,
 				D92D0FB31C33469A00C573AD /* AppDelegate.m */,
-				D92D0FBC1C33469A00C573AD /* ViewController.h */,
-				D92D0FBD1C33469A00C573AD /* ViewController.m */,
-				D92D0FB81C33469A00C573AD /* main.m */,
-				F018A208240F880F004C3B19 /* CreamoBle.swift */,
 				F018A207240F880F004C3B19 /* ScratchJr-Bridging-Header.h */,
 			);
 			name = App;
@@ -250,6 +229,26 @@
 				D92D0FB71C33469A00C573AD /* IO.m */,
 			);
 			name = IO;
+			sourceTree = "<group>";
+		};
+		F0A6D8E62412384100A4E82A /* bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				F018A208240F880F004C3B19 /* CreamoBle.swift */,
+				F0A6D8E824123A3900A4E82A /* CreamoBleClient.h */,
+				F0A6D8E924123A3900A4E82A /* CreamoBleClient.m */,
+			);
+			name = bluetooth;
+			sourceTree = "<group>";
+		};
+		F0A6D8E72412384F00A4E82A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D92D0FBC1C33469A00C573AD /* ViewController.h */,
+				D92D0FBD1C33469A00C573AD /* ViewController.m */,
+				D92D0FB81C33469A00C573AD /* main.m */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D92D0FCD1C3346DC00C573AD /* Database.m in Sources */,
+				F0A6D8EA24123A3900A4E82A /* CreamoBleClient.m in Sources */,
 				D92D0FCE1C3346DC00C573AD /* IO.m in Sources */,
 				D92D0FCF1C3346DC00C573AD /* main.m in Sources */,
 				D92D0FD01C3346DC00C573AD /* RecordSound.m in Sources */,
@@ -387,14 +387,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				204D80B218A4140600ECBB8B /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		204D80CA18A4140600ECBB8B /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				204D80CB18A4140600ECBB8B /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

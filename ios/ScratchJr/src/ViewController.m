@@ -1,5 +1,6 @@
 #import "ScratchJr.h"
 #import "ScratchJr-Swift.h"
+#import "CreamoBleClient.h"
 
 // @import MessageUI;
 @import Firebase;
@@ -9,6 +10,9 @@ NSDate* startDate;
 UIImageView *splashScreen;
 NSDate *startDate;
 JSContext *js;
+CBCentralManager *centralManager;
+CBPeripheral *discoveredPeripheral;
+NSDictionary *data;
 
 @interface ViewController ()
 
@@ -33,6 +37,8 @@ JSContext *js;
     
     CreamoBle *test = [[CreamoBle alloc]init];
     [test test];
+    
+   
     
     [webview setDelegate:self];
     [Database open:@"ScratchJr"];
@@ -132,10 +138,20 @@ JSContext *js;
 -(void)testFunction
 {
     
-    NSLog(@"objective-c");
+//    NSLog(@"objective-c");
+
+    CreamoBleClient *CreamoBle = [[CreamoBleClient alloc]init];
+    [CreamoBle centralManager:centralManager didDiscoverPeripheral:discoveredPeripheral advertisementData:data];
     
     
+    
+ 
 }
+
+
+
+
+
 
 
 - (void)webViewDidStartLoad:(UIWebView *)webView{

@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import "ScratchJr.h"
+#import <CoreBluetooth/CoreBluetooth.h>
 @import Firebase;
 
 @implementation AppDelegate
