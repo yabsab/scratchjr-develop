@@ -230,28 +230,28 @@ export default class Page {
     }
 
     pageThumbnail (p) {
-        // var tb = newHTML('div', 'pagethumb', p);
-        // tb.setAttribute('id', getIdFor('pagethumb'));
-        // tb.owner = this.id;
-        // tb.type = 'pagethumb';
-        // var container = newHTML('div', 'pc-container', tb);
-        // var c = newHTML('canvas', 'pc', container);
-        // this.setPageThumb(c);
-        // var num = newHTML('div', 'pagenum', tb);
-        // var pq = newHTML('p', undefined, num);
-        // pq.textContent = this.num;
-        // newHTML('div', 'deletethumb', tb);
-        // if (isTablet) {
-        //     tb.ontouchstart = function (evt) {
-        //         Thumbs.pageMouseDown(evt);
-        //     };
-        // } else {
-        //     tb.onmousedown = function (evt) {
-        //         Thumbs.pageMouseDown(evt);
-        //     };
-        // }
-        // this.thumbnail = tb;
-        // return tb;
+        var tb = newHTML('div', 'pagethumb', p);
+        tb.setAttribute('id', getIdFor('pagethumb'));
+        tb.owner = this.id;
+        tb.type = 'pagethumb';
+        var container = newHTML('div', 'pc-container', tb);
+        var c = newHTML('canvas', 'pc', container);
+        this.setPageThumb(c);
+        var num = newHTML('div', 'pagenum', tb);
+        var pq = newHTML('p', undefined, num);
+        pq.textContent = this.num;
+        newHTML('div', 'deletethumb', tb);
+        if (isTablet) {
+            tb.ontouchstart = function (evt) {
+                Thumbs.pageMouseDown(evt);
+            };
+        } else {
+            tb.onmousedown = function (evt) {
+                Thumbs.pageMouseDown(evt);
+            };
+        }
+        this.thumbnail = tb;
+        return tb;
     }
 
     setPageThumb (c) {

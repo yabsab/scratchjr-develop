@@ -136,15 +136,13 @@ export default class Project {
         setProps(gn('backdrop').style, {
             display: 'none'
         });
-         var modalOuter = newHTML('div', 'modal-outer', frame.parentNode);
-         var modalMiddle = newHTML('div', 'modal-middle', modalOuter);
-         var modal = newHTML('div', 'modal hide fade', modalMiddle);
-       
+        var modalOuter = newHTML('div', 'modal-outer', frame.parentNode);
+        var modalMiddle = newHTML('div', 'modal-middle', modalOuter);
+        var modal = newHTML('div', 'modal hide fade', modalMiddle);
         modal.setAttribute('id', 'modaldialog');
-        //  setProps(gn('modaldialog').style, {});
-
+        setProps(gn('modaldialog').style, {});
         var body = newHTML('div', 'modal-body', modal);
-        // body.setAttribute('id', 'modalbody');
+        body.setAttribute('id', 'modalbody');
         setProps(body.style, {
             zoom: scaleMultiplier
         });
@@ -163,38 +161,38 @@ export default class Project {
         newHTML('div', 'loadscreenfill', body);
         newHTML('div', 'topfill', body);
         var cover = newHTML('div', 'loadscreencover', body);
-        // cover.setAttribute('id', 'progressbar');
-        // var topcover = newHTML('div', 'topcover', body);
-        // topcover.setAttribute('id', 'topcover');
-        // var cover2 = newHTML('div', 'progressbar2', body);
-        // cover2.setAttribute('id', 'progressbar2');
+        cover.setAttribute('id', 'progressbar');
+        var topcover = newHTML('div', 'topcover', body);
+        topcover.setAttribute('id', 'topcover');
+        var cover2 = newHTML('div', 'progressbar2', body);
+        cover2.setAttribute('id', 'progressbar2');
         var li = newHTML('div', 'loadicon', body);
         li.appendChild(loadIcon);
     }
 
     static setProgress (perc) {
-        // if (!gn('progressbar')) {
-        //     return;
-        // }
-        // var h = projectbarsize - Math.round(projectbarsize * perc / 100);
-        // ScratchJr.log('setProgress', perc, h, mediaCount, mediaCountBase);
-        // gn('progressbar').style.height = h + 'px';
-        // if (h == 0) {
-        //     gn('progressbar2').style.height = '0px';
-        //     gn('topcover').style.background = '#F9A737';
-        // }
+        if (!gn('progressbar')) {
+            return;
+        }
+        var h = projectbarsize - Math.round(projectbarsize * perc / 100);
+        ScratchJr.log('setProgress', perc, h, mediaCount, mediaCountBase);
+        gn('progressbar').style.height = h + 'px';
+        if (h == 0) {
+            gn('progressbar2').style.height = '0px';
+            gn('topcover').style.background = '#F9A737';
+        }
 
     }
 
     static drawBlind () {
-        // gn('backdrop').setAttribute('class', 'modal-backdrop fade in');
-        // setProps(gn('backdrop').style, {
-        //     display: 'block'
-        // });
-        // setProps(gn('modaldialog').style, {
-        //     display: 'block'
-        // });
-        // gn('modaldialog').setAttribute('class', 'modal fade in');
+        gn('backdrop').setAttribute('class', 'modal-backdrop fade in');
+        setProps(gn('backdrop').style, {
+            display: 'block'
+        });
+        setProps(gn('modaldialog').style, {
+            display: 'block'
+        });
+        gn('modaldialog').setAttribute('class', 'modal fade in');
     }
 
     static loadwait (whenDone) {

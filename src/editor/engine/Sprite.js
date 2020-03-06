@@ -190,9 +190,9 @@ export default class Sprite {
     spriteThumbnail (p) {
         var tb = newHTML('div', 'spritethumb off', p);
         tb.setAttribute('id', getIdFor('spritethumb'));
-        tb.type = 'spritethumb';
-        tb.owner = this.id;
-        var c = newHTML('canvas', 'thumbcanvas', tb);
+        // tb.type = 'spritethumb';
+        // tb.owner = this.id;
+        // var c = newHTML('canvas', 'thumbcanvas', tb);
         // TODO: Merge these to get better thumbnail rendering on iOS
         if (isAndroid) {
             setCanvasSizeScaledToWindowDocumentHeight(c, 0, 0);
@@ -200,12 +200,12 @@ export default class Sprite {
             setCanvasSize(c, 0, 0);
         }
 
-        this.drawMyImage(c, c.width, c.height);
-        p = newHTML('p', 'sname', tb);
+        // this.drawMyImage(c, c.width, c.height);
+        // p = newHTML('p', 'sname', tb);
         // p.textContent = this.name;
-        newHTML('div', 'brush', tb);
-        this.thumbnail = tb;
-        return tb;
+        // newHTML('div', 'brush', tb);
+        // this.thumbnail = tb;
+        // return tb;
     }
 
     updateSpriteThumb () {

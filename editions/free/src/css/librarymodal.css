@@ -89,7 +89,7 @@
     background: like
 } */
 
-/* .painticon {
+.painticon {
     display: inline-block;
     position: relative;
     margin: ${css_vh(0.00)} ${css_vh(0.91)} ${css_vh(0.00)};
@@ -99,7 +99,7 @@
     background-size: ${css_vh(8.46)} ${css_vh(8.46)};
     background-size: 100%;
     -webkit-tap-highlight-color: transparent;
-} */
+}
 
 .okicon {
     display: inline-block;
@@ -136,10 +136,10 @@
 
 }
 
-/* .painticon:active {
+.painticon:active {
      background: url('../assets/paint/paintbrushPressed.svg');
      background-size: 100%;
-}  */
+} 
 
 /*Assets chooser*/
  *.innerlibrary {

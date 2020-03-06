@@ -31,20 +31,11 @@ let infoBoxOpen = false;
 const EMAILSHARE = 0;
 const AIRDROPSHARE = 1;
 
-
-function teset() 
-{
-   window.location =  "jscall://testFunction";
-
-
-}
-
 export default class UI {
     static get infoBoxOpen () {
         return infoBoxOpen;
     }
 
- 
     static layout () {
         UI.topSection();
         UI.middleSection();
@@ -55,8 +46,6 @@ export default class UI {
         ScratchJr.setupEditableField();
         UI.aspectRatioAdjustment();
     }
-
-
 
     // Helps debug on Android 4.2 by enabling the user to type in a
     // JavaScript expression and evaluate the output and render to console.log.
@@ -101,28 +90,12 @@ export default class UI {
         //sprite library
         var sl = newHTML('div', 'leftpanel', div);
         var flip = newHTML('div', 'flipme', sl);
-
-        var Btbluetooth = newHTML('div','Btbleutooth',sl);
-
         flip.setAttribute('id', 'flip');
         flip.ontouchstart = function (evt) {
             ScratchJr.saveAndFlip(evt);
         }; // move to project
-
-        Btbluetooth.setAttribute('id','Btbleutooth')
-        
-        Btbleutooth.ontouchstart = function (evt)
-       
-        {
-         
-            teset()
-        }
-
-
         UI.layoutLibrary(sl);
     }
-  
-
 
     static middleSection () {
         var bp = newHTML('div', 'blockspalette', frame);
@@ -161,11 +134,11 @@ export default class UI {
 
             // Sharing
             var shareButtons = newHTML('div', 'infoboxShareButtons', infobox);
-            // shareButtons.setAttribute('id', 'sharebuttons');
+            shareButtons.setAttribute('id', 'sharebuttons');
 
             var shareEmail = newHTML('div', 'infoboxShareButton', shareButtons);
             shareEmail.id = 'infoboxShareButtonEmail';
-            // shareEmail.textContent = Localization.localize('SHARING_BY_EMAIL');
+            shareEmail.textContent = Localization.localize('SHARING_BY_EMAIL');
             shareEmail.ontouchstart = function (e) {
                 // UI.infoDoShare(e, nameField, shareLoadingGif, EMAILSHARE);
             };
@@ -178,8 +151,8 @@ export default class UI {
 
             if (!isAndroid) {
                 var shareAirdrop = newHTML('div', 'infoboxShareButton', shareButtons);
-                // shareAirdrop.id = 'infoboxShareButtonAirdrop';
-                // shareAirdrop.textContent = Localization.localize('SHARING_BY_AIRDROP');
+                shareAirdrop.id = 'infoboxShareButtonAirdrop';
+                shareAirdrop.textContent = Localization.localize('SHARING_BY_AIRDROP');
                 // shareAirdrop.style.float = 'right';
             
                 
@@ -193,7 +166,7 @@ export default class UI {
             });
 
             var shareLoadingGif = newHTML('img', 'infoboxShareLoading', shareButtons);
-            // shareLoadingGif.src = './assets/ui/loader.png';
+            shareLoadingGif.src = './assets/ui/loader.png';
 
             parentsButton.ontouchstart = function (e) {
                 UI.parentalGate(e, function (e) {
@@ -329,7 +302,7 @@ export default class UI {
         var ti = newHTML('input', 'pnamefield', pname);
         projectNameTextInput = ti;
         ti.name = 'myproject';
-        ti.maxLength = 0;
+        ti.maxLength = 30;
         ti.onkeypress = undefined;
         ti.autocomplete = 'off';
         ti.autocorrect = false;
@@ -357,6 +330,8 @@ export default class UI {
                 submitChange(e);
             }
         }
+
+
 
         function submitChange (e) {
             e.preventDefault();
@@ -505,7 +480,7 @@ export default class UI {
 
     static layoutLibrary (sl) {
         var sprites = newHTML('div', 'thumbpanel', sl);
-        // sprites.setAttribute('id', 'library');
+        sprites.setAttribute('id', 'library');
         
         //scrolling area
         var p = newHTML('div', 'spritethumbs', sprites);
