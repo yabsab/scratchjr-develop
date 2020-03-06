@@ -109,8 +109,34 @@ JSContext *js;
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     //read your request here
     //before the webview will load your request
+    
+ if ([[[request URL] absoluteString] hasPrefix:@"jscall:"])
+ {
+     NSString *requestString = [[request URL] absoluteString];
+     NSArray *components = [requestString componentsSeparatedByString:@"://"];
+     NSString *functionName = [components objectAtIndex:1];
+     if ([functionName isEqualToString:@"testFunction"])
+     {
+         [self performSelector:@selector(testFunction)];
+         
+     }
+     return NO;
+
+ }
+    
     return YES;
 }
+
+
+
+-(void)testFunction
+{
+    
+    NSLog(@"objective-c");
+    
+    
+}
+
 
 - (void)webViewDidStartLoad:(UIWebView *)webView{
     //access your request

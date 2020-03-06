@@ -1,4 +1,4 @@
- .modal-outer {
+ /* .modal-outer {
     display: table;
     position: absolute;
     top: 0px;
@@ -6,7 +6,7 @@
     width: 50%;
     height: 50%;
     pointer-events: none;
-}
+} */
 
 .modal-middle {
     display: table-cell;
