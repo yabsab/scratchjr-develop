@@ -16,8 +16,27 @@
  .flipme:active {
     background:  url('../assets/ui/fliplogoPressed.svg');
     background-size: 100.5%; 
-
 }
+
+.Btbleutooth {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: ${css_vh(0.65)};
+    left: ${css_vh(65)};
+    background:  url('../assets/ui/fliplogo.svg');
+    background:rgba(255,0,0,0.5);
+    background-size: 100.5%;
+    width: ${css_vh(8.33)};
+    height: ${css_vh(8.33)};
+} 
+ /* webview pixelates the image unless we do this */
+ .Btbleutooth:active {
+    background:  url('../assets/ui/fliplogoPressed.svg');
+    background-size: 100.5%; 
+}
+
+
   /* background: rgba(255,255,255,0.5);  */
 /* .scrollbar {
     position: absolute;
@@ -71,7 +90,7 @@
     width: 0 !important;
 }
 
-#library .spritethumbs .spritecc{
+#library .spritethumbs .{
     position: relative;
     margin: 0px ${css_vh(2.34)} 0px;
     padding: 0px;
