@@ -33,14 +33,7 @@ import CoreBluetooth
     }
     
     
-    /*
-     
-     블루투스 스캔
-     개발 : 안재용
-     e-mail : sk8yabsab@gmail.com
-     날짜 : 2020년03월06일
-     */
-    
+ 
     
     @objc func ble()
     {

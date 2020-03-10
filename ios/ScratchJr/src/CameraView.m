@@ -28,7 +28,7 @@ int orientation;
         // Initialization code
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
         [notificationCenter addObserver:self selector:@selector(deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
-		orientation =  [UIApplication sharedApplication].statusBarOrientation;
+//		orientation =  [UIApplication sharedApplication].statusBarOrientation;
     }
     return self;
 }

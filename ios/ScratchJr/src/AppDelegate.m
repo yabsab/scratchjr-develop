@@ -1,12 +1,15 @@
 #import "AppDelegate.h"
 #import "ScratchJr.h"
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "CreamoBleClient.h"
+
 @import Firebase;
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
         [Database open:@"ScratchJr"];
         [Database initTables];
@@ -21,16 +24,24 @@
     self.window.rootViewController = [[ViewController alloc] initWithNibName:@"View" bundle:nil];
     [self.window makeKeyAndVisible];
     
+  
     // Configure Firebase
     [FIRApp configure];
     
     return YES;
+    
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    
+//    [CreamoBleClient initCentralManager];
+//    [CreamoBleClient beginScanningForDevice];
+    
+    
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application

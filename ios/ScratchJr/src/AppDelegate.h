@@ -5,4 +5,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+-(void) initCentralManager;
+
 @end

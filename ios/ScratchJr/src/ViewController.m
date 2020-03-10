@@ -10,9 +10,12 @@ NSDate* startDate;
 UIImageView *splashScreen;
 NSDate *startDate;
 JSContext *js;
-CBCentralManager *centralManager;
-CBPeripheral *discoveredPeripheral;
+CBCentralManager *CbManager;
+CBPeripheral *peripheral;
+NSNumber *rssi;
 NSDictionary *data;
+CBCharacteristic *chardata;
+NSError *errordata;
 
 @interface ViewController ()
 
@@ -34,12 +37,6 @@ NSDictionary *data;
     [super viewDidLoad];
     [self registerDefaultsFromSettingsBundle];
     webview = (UIWebView*)[self view] ;
-    
-    CreamoBle *test = [[CreamoBle alloc]init];
-    [test test];
-    
-   
-    
     [webview setDelegate:self];
     [Database open:@"ScratchJr"];
     [ScratchJr cameraInit];
@@ -49,6 +46,13 @@ NSDictionary *data;
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:NO];
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    
+    [CreamoBleClient bleSingletone];
+    
+
+    
+    
+    
 }
 
 - (void) showSplash {
@@ -137,16 +141,26 @@ NSDictionary *data;
 
 -(void)testFunction
 {
-    
-//    NSLog(@"objective-c");
+  
+    [CreamoBleClient centralManagerDidUpdateState:CbManager];
+    [CreamoBleClient beginScanningForDevice];
+    [CreamoBleClient centralManager:CbManager didDiscoverPeripheral:peripheral advertisementData:data RSSI:rssi];
+    [CreamoBleClient peripheral:peripheral didUpdateValueForCharacteristic:chardata error:errordata];
+  
 
-    CreamoBleClient *CreamoBle = [[CreamoBleClient alloc]init];
-    [CreamoBle centralManager:centralManager didDiscoverPeripheral:discoveredPeripheral advertisementData:data];
+
     
-    
-    
- 
 }
+
+
+
+-(void) initCentralManager
+{ //센트럴 매니저 초기화 + 대리자 설정
+    //이제 블루투스 기능을 사용할 수 있고, 관리할 수 있다
+//    centralManager = [[CBCentralManager alloc]initWithDelegate:self queue:nil];
+    
+}
+
 
 
 
