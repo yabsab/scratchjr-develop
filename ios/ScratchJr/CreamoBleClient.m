@@ -18,6 +18,9 @@ CBCentralManager *CbCentralManager;
 NSString *deviceName;
 CBPeripheral *discoveredPeripheral;
 CBCharacteristic *Charater;
+NSData *sendData;
+CBService *service;
+NSMutableDictionary *devices;
 
 @implementation CreamoBleClient
 
@@ -66,6 +69,7 @@ CBCharacteristic *Charater;
   // Should never be called, but just here for clarity really.
 }
 
+//블루투스 on
 +(void)centralManagerDidUpdateState:(CBCentralManager *)central
 
 { //휴대폰의 블루투스가 켜져있을 경우.
@@ -80,8 +84,7 @@ CBCharacteristic *Charater;
         }
     }
 
-//블루투스 connect
-
+//블루투스 connect 탐색 및
 +(void)centralManager:(CBCentralManager *)central
 didConnectPeripheral:(CBPeripheral *)peripheral
 {
@@ -89,40 +92,81 @@ didConnectPeripheral:(CBPeripheral *)peripheral
     NSLog(@"연결된 기기");
     deviceName = peripheral.name;
     NSLog(@"%@",deviceName);
+    
+    peripheral.delegate = self;
+   [peripheral discoverServices:nil];
+    
 }
 
 
-- (void)sendCodeToBTDevice:(NSString *)code
-            characteristic:(CBCharacteristic *)characteristic
++(void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
 {
-    if(code != nil) {
-        NSData *data = [code dataUsingEncoding:NSUTF8StringEncoding];
-        [self.discoveredPeripheral writeValue:data forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
-    }
+    // Enumerate through all services on the connected peripheral.
+    for (CBService* service in peripheral.services)
+    {
+        // Discover all characteristics for this service.
+        [peripheral discoverCharacteristics:nil forService:service];
+
+        NSLog(@"service start");
+
+    }    
 }
+
+
+
+
+
++(void)sendValue:(NSString *)str
+{
+   NSLog(@"%@",str);
+   CBService *service;
+    
+  for (service in [discoveredPeripheral services])
+    {
+        
+        NSLog(@"service");
+        
+       for (CBCharacteristic * characteristic in [service characteristics])
+       {
+           
+            NSLog(@"characteristic");
+           
+          [discoveredPeripheral writeValue:[str dataUsingEncoding:NSUTF8StringEncoding]
+            forCharacteristic:characteristic type:CBCharacteristicWriteWithoutResponse];
+
+      }
+   }
+}
+
+
 
 
 //블루투스 탐색 및 정보 가져오기
-+(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)aPeripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI 
++(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)Peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
 
       
-    NSLog(@"Discovered %@ %@", aPeripheral, advertisementData);
+    NSLog(@"Discovered %@ %@", Peripheral, advertisementData);
     
     
+    discoveredPeripheral = Peripheral ;
+     deviceName = Peripheral.name;
+   
     
-    deviceName = aPeripheral.name;
     if([deviceName isEqualToString:@"HMSoft"])
     
-    {
-        NSLog(@"HMSoft");
+        {
+        [CbCentralManager connectPeripheral:discoveredPeripheral options:nil];
+            
+        [CbCentralManager stopScan];
         
-    discoveredPeripheral = aPeripheral ;
-    [CbCentralManager stopScan];
-    [CbCentralManager connectPeripheral:discoveredPeripheral options:nil];
+        }
 
-    }
 }
+
+
+
+
 
 //블루투스 탐색 시작
 +(void)beginScanningForDevice

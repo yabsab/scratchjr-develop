@@ -48,6 +48,11 @@ NSError *errordata;
     [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     
     [CreamoBleClient bleSingletone];
+    [CreamoBleClient centralManagerDidUpdateState:CbManager];
+       [CreamoBleClient beginScanningForDevice];
+       [CreamoBleClient centralManager:CbManager didDiscoverPeripheral:peripheral advertisementData:data RSSI:rssi];
+       [CreamoBleClient peripheral:peripheral didUpdateValueForCharacteristic:chardata error:errordata];
+     
     
 
     
@@ -142,12 +147,9 @@ NSError *errordata;
 -(void)testFunction
 {
   
-    [CreamoBleClient centralManagerDidUpdateState:CbManager];
-    [CreamoBleClient beginScanningForDevice];
-    [CreamoBleClient centralManager:CbManager didDiscoverPeripheral:peripheral advertisementData:data RSSI:rssi];
-    [CreamoBleClient peripheral:peripheral didUpdateValueForCharacteristic:chardata error:errordata];
-  
-
+   
+    [CreamoBleClient sendValue:@"test"];
+    
 
     
 }

@@ -26,19 +26,27 @@
 didConnectPeripheral:(CBPeripheral *)peripheral;
 
 
-+(void)sendCodeToBTDevice:(NSString *)code
-            characteristic:(CBCharacteristic *)characteristic ;
+
 +(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error;
+
++(void)writeValue:(NSData *)data
+forCharacteristic:(CBCharacteristic *)characteristic
+             type:(CBCharacteristicWriteType)type;
+
++(void)sendValue:(NSString *)str;
++(void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error;
+
 
 
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central;
 @property(nonatomic, retain) CBCentralManager *CbCentralManager;
-@property(nonatomic, retain) CBPeripheral *discoveredPeripheral;
+@property(strong, nonatomic) CBPeripheral *discoveredPeripheral;
 @property(nonatomic, retain) NSDictionary *data;
 @property(nonatomic, retain) NSString *deviceName;
 @property(nonatomic, retain) CBCharacteristic *Charater;
 @property(nonatomic, retain) NSError *error;
 @property(nonatomic, retain) NSString *stringError;
+@property (strong, nonatomic) NSMutableDictionary *devices;
 
 
 
